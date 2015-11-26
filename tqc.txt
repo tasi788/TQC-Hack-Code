@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 cd C:\TQC2013CAI(LV).csf
 cls
 :start
@@ -27,7 +27,12 @@ goto start
 :ans
 cls
 :start
-echo 1.移除保護系統
+echo 1.溫泉會館
+echo 2.半年曆
+echo 3.成績單
+echo 4.房屋租賃
+echo 5.套房出租
+echo 6.機票
 set /p choice=執行選項：
 rem if not '%choice%'=='' set choice=%choice:~0;1%
 if '%choice%'=='' echo "%choice%" is not valid please try again
