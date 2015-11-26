@@ -1,13 +1,11 @@
-@echo off
-cd C:\TQC2013CAI(LV).csf
+﻿@echo off
 cls
 :start
 echo 1.移除保護系統
 echo 2.還原保護系統
 echo 3.答案
 set /p choice=執行選項：
-rem if not '%choice%'=='' set choice=%choice:~0;1%
-if '%choice%'=='' echo "%choice%" is not valid please try again
+if '%choice%'=='' echo "%choice%" ***非選項請再輸入一次***
 if '%choice%'=='1' goto bak
 if '%choice%'=='2' goto recovery
 if '%choice%'=='3' goto ans
@@ -15,41 +13,75 @@ echo.
 goto start
 
 :bak
+cd C:\TQC2013CAI(LV).csf
 rename Protect.exe Protect.bak
 echo.
 goto start
 
 :recovery
+cd C:\TQC2013CAI(LV).csf
 rename Protect.bak Protect.exe
 echo.
 goto start
-//-----分隔線-----//
+
+@REM::-----分隔線-----
+
 :ans
 cls
 :start
-echo 1.溫泉會館
-echo 2.半年曆
-echo 3.成績單
-echo 4.房屋租賃
-echo 5.套房出租
-echo 6.機票
+echo 0.返回
+echo 11.溫泉會館
+echo 12.半年曆
+echo 13.成績單
+echo 14.房屋租賃
+echo 15.套房出租
+echo 16.機票
 set /p choice=執行選項：
-rem if not '%choice%'=='' set choice=%choice:~0;1%
 if '%choice%'=='' echo "%choice%" is not valid please try again
-if '%choice%'=='1' goto bak
+if '%choice%'=='0' goto 0
+if '%choice%'=='11' goto 11
+if '%choice%'=='12' goto 12
+if '%choice%'=='13' goto 13
+if '%choice%'=='14' goto 14
+if '%choice%'=='15' goto 15
+if '%choice%'=='16' goto 16
 echo.
 goto start
-:bak
-rename Protect.exe Protect.bak
+
+:0
 echo.
 goto start
 
+:11
+copy \ans\11.docx C:\ANS.csf
+echo.
+goto start
 
+:12
+copy \ans\12.docx C:\ANS.csf
+echo.
+goto start
 
+:13
+copy \ans\13.docx C:\ANS.csf
+echo.
+goto start
 
+:14
+copy \ans\14.docx C:\ANS.csf
+echo.
+goto start
 
+:15
+copy \ans\15.docx C:\ANS.csf
+echo.
+goto start
+
+:16
+copy \ans\16.docx C:\ANS.csf
+echo.
+goto start
 
 
 :end
 pause
-exit
