@@ -1,6 +1,6 @@
 ﻿@echo off
 cls
-:start
+:start1
 echo 1.移除保護系統
 echo 2.還原保護系統
 echo 3.答案
@@ -10,24 +10,25 @@ if '%choice%'=='1' goto bak
 if '%choice%'=='2' goto recovery
 if '%choice%'=='3' goto ans
 echo.
-goto start
+goto start1
 
 :bak
-cd C:\TQC2013CAI(LV).csf
-rename Protect.exe Protect.bak
-echo.
-goto start
+rename C:\TQC2013CAI.csf\Protect.exe Protect.bak
+echo 已移除
+cls
+goto start1
 
 :recovery
-cd C:\TQC2013CAI(LV).csf
-rename Protect.bak Protect.exe
-echo.
-goto start
+rename C:\TQC2013CAI.csf\Protect.bak Protect.exe
+echo 已還原
+cls
+goto start1
 
 @REM::-----分隔線-----
 
 :ans
 cls
+cd ans
 :start
 echo 0.返回
 echo 11.溫泉會館
@@ -50,35 +51,35 @@ goto start
 
 :0
 echo.
-goto start
+goto start1
 
 :11
-copy \ans\11.docx C:\ANS.csf
+copy 11.docx C:\ANS.csf
 echo.
 goto start
 
 :12
-copy \ans\12.docx C:\ANS.csf
+copy 12.docx C:\ANS.csf
 echo.
 goto start
 
 :13
-copy \ans\13.docx C:\ANS.csf
+copy 13.docx C:\ANS.csf
 echo.
 goto start
 
 :14
-copy \ans\14.docx C:\ANS.csf
+copy 14.docx C:\ANS.csf
 echo.
 goto start
 
 :15
-copy \ans\15.docx C:\ANS.csf
+copy 15.docx C:\ANS.csf
 echo.
 goto start
 
 :16
-copy \ans\16.docx C:\ANS.csf
+copy 16.docx C:\ANS.csf
 echo.
 goto start
 
